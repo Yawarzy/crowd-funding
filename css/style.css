@@ -13,7 +13,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100%;
   min-height: 100vh;
+  background-color: #fafafa;
   overflow-x: hidden;
+  margin-bottom: 2em;
 }
 
 ul,
@@ -29,6 +31,7 @@ a {
 
 img {
   width: 100%;
+  height: 100%;
   max-width: 100%;
 }
 
@@ -123,6 +126,7 @@ img {
     pointer-events: none;
     -webkit-transform: translateY(-20px);
             transform: translateY(-20px);
+    z-index: 100;
   }
   #main-nav.show {
     opacity: 1;
@@ -177,22 +181,279 @@ img {
   top: -20vh;
 }
 
+#first-card {
+  position: relative;
+}
+
+#first-card .card-img {
+  position: absolute;
+  top: -2em;
+}
+
+#first-card h2 {
+  margin-bottom: 0;
+}
+
+.btn-wrapper.flex {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1em;
+}
+
+.btn-wrapper.flex .btn-primary {
+  padding-right: 2em;
+  padding-left: 2em;
+}
+
+.btn-wrapper.flex .btn-light {
+  padding: 0 1.5em 0 0;
+  font-weight: bold;
+}
+
+.btn-wrapper.flex .btn-light img {
+  margin-right: 0.5em;
+  max-height: 51px;
+  min-height: 51px;
+}
+
+.btn-wrapper.flex .btn-dark {
+  display: none;
+}
+
+.pricing.flex {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.pricing.flex h4 {
+  font-size: 2rem;
+  font-family: "Commissioner", sans-serif;
+  line-height: 1.7;
+}
+
+.pricing.flex p.lead {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+.pricing.flex div {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+
+.pricing.flex div:nth-child(2) {
+  border-top: 0;
+  border-bottom: 0;
+  border-right: 1px;
+  border-left: 1px;
+  border-color: #e6e6e6;
+  border-style: solid;
+}
+
+.progress-bar {
+  margin: 2em 0 0 0;
+  width: 100%;
+  height: 10px;
+  border-radius: 1em;
+  background-color: #e6e6e6;
+  position: relative;
+}
+
+.progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 10px;
+  border-radius: 1em;
+  background-color: #147b74;
+}
+
+.card-head.flex {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card-bottom.flex {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card-bottom.flex h5 {
+  font-size: 1.75rem;
+  font-family: "Commissioner", sans-serif;
+  line-height: 1.7;
+}
+
+.card-bottom.flex h5 sup {
+  font-size: 0.8rem;
+  color: #7a7a7a;
+  font-weight: 400;
+}
+
+.card-bottom.flex button {
+  padding-right: 2em;
+  padding-left: 2em;
+}
+
+.card__disabled {
+  opacity: 0.5;
+}
+
+.card__disabled button {
+  color: #f4f4f4;
+  background-color: #7a7a7a;
+}
+
+@media screen and (max-width: 768px) {
+  .content-container {
+    max-width: 95vw !important;
+    padding: 0;
+  }
+  .card {
+    width: 100%;
+  }
+  #first-card {
+    text-align: center;
+  }
+  .btn-wrapper.flex .btn-light {
+    display: none;
+  }
+  .btn-wrapper.flex .btn-primary {
+    max-width: 70%;
+    min-width: 70%;
+  }
+  .btn-wrapper.flex .btn-dark {
+    display: inline-block;
+  }
+  .btn-wrapper.flex .btn-dark img {
+    min-height: 51px;
+    max-height: 51px;
+    width: auto;
+  }
+  .pricing.flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .pricing.flex div:nth-child(2) {
+    margin: 2em 0;
+    padding: 1em 0;
+    border: 1px solid #e6e6e6;
+    border-left: 0;
+    border-right: 0;
+  }
+  .card-head.flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .card-head.flex h3 {
+    margin-bottom: 0.75em;
+  }
+  .card-bottom.flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .card-bottom.flex h5 {
+    margin-bottom: 0.75em;
+  }
+}
+
 .container {
   max-width: 1024px;
   margin: 0 auto;
-  border: 2px solid red;
 }
 
 .content-container {
   max-width: 55%;
   margin: 0 auto;
   padding: 0 2em;
-  border: 2px solid blue;
+}
+
+.lg-heading {
+  font-size: 1.65rem;
+  font-family: "Commissioner", sans-serif;
+  margin: 0.5em 0;
+}
+
+.md-heading {
+  font-family: "Commissioner", sans-serif;
+  font-size: 1.25rem;
+  margin: 0.5em 0;
+}
+
+.sm-heading {
+  font-family: "Commissioner", sans-serif;
+  font-size: 1.1rem;
+}
+
+.lead {
+  font-size: 1rem;
+  color: #7a7a7a;
+  font-family: "Commissioner", sans-serif;
+  font-weight: 500;
+  line-height: 1.7;
+  margin: 0.5em 0;
+  padding: 1em 0;
+}
+
+.blue-lead {
+  color: #147b74;
+  font-family: "Commissioner", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: transparent;
+  padding: 1em;
+  border-radius: 1.5em;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Commissioner", sans-serif;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: #147b74;
+  color: #fff;
+}
+
+.btn-light {
+  background: #e6e6e6;
+  color: #7a7a7a;
 }
 
 .card {
-  padding: 1em 2em;
-  border: 1px solid rgba(3, 3, 3, 0.1);
+  padding: 2em 2em;
+  border: 1px solid #f4f4f4;
+  -webkit-box-shadow: 0 0 10px -10px #333;
+          box-shadow: 0 0 10px -10px #333;
   position: relative;
   margin: 1em 0;
   background-color: #fff;
